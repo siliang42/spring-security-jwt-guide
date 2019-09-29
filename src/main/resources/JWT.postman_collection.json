@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "14fddb8c-7b75-4c81-bab3-3c0aa7f3c0a5",
+		"name": "JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"root\",\n\t\"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9333/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "9333",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"root\",\n\t\"password\":\"123456\",\n\t\"rememberMe\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9333/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9333",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJST0xFX0RFVixST0xFX1BNIiwiaXNzIjoiU25haWxDbGltYiIsImlhdCI6MTU2OTc1Mjc1Nywic3ViIjoicm9vdCIsImV4cCI6MTU3MDM1NzU1OH0.3j9s-SL_KgTX90A38DGf7001Zh1WTLgW1KMxUs6SIwE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"root\",\n\t\"password\":\"123456\",\n\t\"rememberMe\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9333/api/users?pageNum=0",
+					"host": [
+						"localhost"
+					],
+					"port": "9333",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
